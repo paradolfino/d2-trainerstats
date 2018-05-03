@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_04_20_154307) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "logs", force: :cascade do |t|
     t.string "title"
     t.boolean "active"
@@ -36,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_04_20_154307) do
     t.string "stage"
     t.string "status"
     t.text "notes"
-    t.bigint "log_id"
+    t.integer "log_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["log_id"], name: "index_trainings_on_log_id"
