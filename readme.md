@@ -46,3 +46,5 @@
 ##### 26/04/2018: 21:30 - 21:53:pool[changing view/edit to View on trainings screen and adding show view and action]
 
 ##### 26/04/2018: 21:53 - 21:55:pool[fix css for show index]
+
+##### 03/05/2018: 19:07 - 19:07:pool[switch dev db to sqlite3]
