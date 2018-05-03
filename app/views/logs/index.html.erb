@@ -25,8 +25,7 @@
         <% end %>
     </tbody>
 </table>
-<% if user_signed_in? %>
+
     <div class="options">
-        <%= link_to fa_icon("plus-circle", text: "New Log"), new_log_path %> | <%= link_to fa_icon("search", text: "View Inactive"), inactive_logs_path %>
+        <% if user_signed_in? %> <%= link_to fa_icon("plus-circle", text: "New Log"), new_log_path %> | <% end %><%= link_to fa_icon("search", text: "View Inactive"), inactive_logs_path %>
     </div>
-<% end %>
