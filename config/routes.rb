@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :trainings
 =end
   devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new'
+    get 'login', to: 'devise/sessions#new'
+    get 'logout', to: 'devise/sessions#destroy'
+    get 'sign_up', to: 'devise/registrations#new'
   end
   get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   root 'logs#index'
