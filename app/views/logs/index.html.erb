@@ -16,7 +16,10 @@
                 <td><%= link_to t.title, log_path(t) %></td>
                 <td><%= t.trainings.count %></td>
                 <% if user_signed_in? %>
-                    <td> <%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), log_path(t), method: :delete %></td>
+                    <td> <%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %> | 
+                    <% if current_user.role == "admin" %>
+                    <%= link_to fa_icon("trash", text: "Delete"), log_path(t), method: :delete %></td>
+                    <% end %>
                 <% end %>
             </tr>
         <% end %>
