@@ -50,3 +50,5 @@
 ##### 03/05/2018: 19:07 - 19:07:pool[switch dev db to sqlite3]
 
 ##### 03/05/2018: 19:07 - 19:13:pool[install devise]
+
+##### 03/05/2018: 19:13 - 19:44:pool[config devise views]
