@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
+gem 'toastr_rails'
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg', '>= 0.18', '< 2.0'
