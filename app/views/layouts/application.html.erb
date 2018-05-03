@@ -22,6 +22,9 @@
         </li>
         <% if !user_signed_in? %>
           <li class="pull-right">Login</li>
+          <li class="pull-right">Signup</li>
+        <% else %>
+          <li class="pull-right">Signed in as <%= current_user.fullname %></li>
         <% end %>
       </ul>
       
