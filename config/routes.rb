@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
 =begin 
   root 'trainings#new'
   post '/' => 'trainings#create'
