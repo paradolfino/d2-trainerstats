@@ -1,7 +1,10 @@
 class RegistrationsController < ApplicationController
     def new
-        flash[:notice] = "You must be an admin to create new users!"
-        redirect_to '/' unless user_signed_in? && current_user.role == "admin" 
+        
+        if !user_signed_in? && !current_user.role == "admin"
+            redirect_to '/'
+            flash[:notice] = "You must be an admin to create new users!"
+        end
         @user = User.new
     end
     
