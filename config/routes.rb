@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   post '/trainings/:id' => "trainings#update"
   resources :trainings
 =end
-  get 'signup' => 'users#new'
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'logout', to: 'devise/sessions#destroy'
