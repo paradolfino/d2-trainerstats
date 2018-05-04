@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :path_prefix => 'my'
+  devise_for :users, :path_prefix => 'portal'
 =begin 
   root 'trainings#new'
   post '/' => 'trainings#create'
@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
     get 'logout', to: 'devise/sessions#destroy'
   end
-  resources :users
+  scope '/admin' do
+    resources :users
+  end
+  
   get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   root 'logs#index'
   resources :logs do
