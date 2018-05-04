@@ -6,7 +6,6 @@ class RegistrationsController < ApplicationController
     end
     
     def create
-       @user = User.new(params)
        sql = "insert into users (name,email, created_at,updated_at) values( 
         #{ActiveRecord::Base.connection.quote(user_params[:fullame])}, 
         #{ActiveRecord::Base.connection.quote(user_params[:email])},now(), now())"
