@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
     get 'logout', to: 'devise/sessions#destroy'
     get 'sign_up', to: 'registrations#new'
-    post 'sign_up', to: 'registrations#create'
+    
   end
-  
+  post 'sign_up', to: 'registrations#create'
   get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   root 'logs#index'
   resources :logs do
