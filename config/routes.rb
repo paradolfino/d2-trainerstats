@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users
 =begin 
   root 'trainings#new'
   post '/' => 'trainings#create'
