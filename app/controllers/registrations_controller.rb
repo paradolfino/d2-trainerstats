@@ -13,4 +13,10 @@ class RegistrationsController < ApplicationController
       ActiveRecord::Base.connection.execute(sql)
       redirect_to action: 'index'
     end
+    
+    private
+    
+        def user_params
+           params.require(:user).permit(:fullname, :email) 
+        end
 end
