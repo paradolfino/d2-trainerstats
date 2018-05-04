@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authenticate!
-   def show
+   def new
        
    end
 end
