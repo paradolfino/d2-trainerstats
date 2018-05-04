@@ -1,7 +1,7 @@
 <h2 class="text-center">Sign up</h2>
 
 <%= form_for @user, :url => {:action => "create"} do |f| %>
-  <%= devise_error_messages! %>
+  
   
   <div class="form-group">
     <%= f.text_field :fullname, autofocus: true, autocomplete: "fullname", placeholder: "Full Name", class: "form-control" %>
