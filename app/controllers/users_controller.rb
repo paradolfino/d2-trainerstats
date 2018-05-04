@@ -3,4 +3,8 @@ class UsersController < ApplicationController
         redirect_to '/' unless user_signed_in? && current_user.role == "admin" 
         @user = User.new
     end
+    
+    def create
+        
+    end
 end
