@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
        sql = "insert into users (name,email, created_at,updated_at) values( 
         #{ActiveRecord::Base.connection.quote(user_params[:fullame])}, 
         #{ActiveRecord::Base.connection.quote(user_params[:email])},now(), now())"
-  ActiveRecord::Base.connection.execute(sql)
-  redirect_to action: 'index'
+      ActiveRecord::Base.connection.execute(sql)
+      redirect_to action: 'index'
     end
 end
