@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get 'sign_up', to: 'registrations#new'
     
   end
-  post 'sign_up', to: 'registrations#create'
+  post 'users/sign_up', to: 'registrations#create'
   get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   root 'logs#index'
   resources :logs do
