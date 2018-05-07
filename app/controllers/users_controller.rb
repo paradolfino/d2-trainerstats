@@ -3,12 +3,11 @@ class UsersController < ApplicationController
     before_action :require_admin, only: [:new, :index]
     
     def index
-        
+        @users = User.all
     end
     
     def new
         @user = User.new
-        require_admin
     end
     
     def create
