@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     end
     
     def destroy
+        flash[:notice] = "#{@user.fullname} has been destroyed."
         @user.destroy
         redirect_to '/admin/users'
     end
