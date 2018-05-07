@@ -23,7 +23,11 @@ class UsersController < ApplicationController
     end
     
     def update
-        
+        if @user.update(user_params)
+           flash[:notice] = "User #{@user.fullname} has been updated!" 
+        else
+            
+        end
     end
     
     def destroy
