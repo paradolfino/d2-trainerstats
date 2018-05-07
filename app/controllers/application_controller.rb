@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     def is_admin?
        current_user.role == "admin" 
     end
+    
+    def require_admin
+        
+    end
 
     
     protected
