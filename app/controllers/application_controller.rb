@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     end
     
     def is_admin?
-        return true if current_user.role == "admin"
+        return true if current_user.role == "Admin"
         false
     end
     
