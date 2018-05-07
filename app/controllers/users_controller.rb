@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
-    def new
+    
+    def index
         
-        if !user_signed_in? && !current_user.role == "admin"
-            redirect_to '/'
-            flash[:notice] = "You must be an admin to create new users!"
-        end
+    end
+    
+    def new
         @user = User.new
+        require_admin
     end
     
     def create
