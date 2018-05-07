@@ -30,3 +30,4 @@
 03/05/2018: 20:37 - 20:42:pool[implement fullname field in new and edit fields]
 03/05/2018: 21:19 - 21:33:pool[begin implement toastr flash messages]
 03/05/2018: 21:52 - 22:05:pool[add role to user model]
+07/05/2018: 20:04 - 20:10:pool[set up edit and update actions for users controller]
