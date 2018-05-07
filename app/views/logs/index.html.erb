@@ -17,7 +17,7 @@
                 <td><%= t.trainings.count %></td>
                 <% if user_signed_in? %>
                     <td> <%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %> | 
-                    <% if current_user.role == "admin" %>
+                    <% if is_admin? %>
                         <%= link_to fa_icon("trash", text: "Delete"), log_path(t), method: :delete %></td>
                     <% end %>
                 <% end %>
