@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
     
     def require_admin
-        
+        redirect_to 'login' unless is_admin?
     end
 
     
