@@ -26,7 +26,8 @@ class UsersController < ApplicationController
         if @user.update(user_params)
            flash[:notice] = "User #{@user.fullname} has been updated!" 
         else
-            
+            flash[:alert] = "There were errors when attempting to update, please review before submitting."
+            render 'edit'
         end
     end
     
