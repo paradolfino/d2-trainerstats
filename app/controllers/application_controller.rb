@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
     
     def require_admin
         if !is_admin?
-           flash[:notice] = "You must be an admin to view this!" 
+           flash[:notice] = "You must be an admin to view this!"
+           redirect_to 'login'
         end
     end
 
