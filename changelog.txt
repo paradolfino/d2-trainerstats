@@ -33,3 +33,4 @@
 07/05/2018: 20:04 - 20:10:pool[set up edit and update actions for users controller]
 07/05/2018: 20:10 - 20:13:pool[set up routes to skip registrations]
 07/05/2018: 20:13 - 21:02:pool[set up nav bar to show admin related information if admin]
+07/05/2018: 21:02 - 21:12:pool[add ability to set new user as admin and fix some language on new user view]
