@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!
     def new
         
         if !user_signed_in? && !current_user.role == "admin"
