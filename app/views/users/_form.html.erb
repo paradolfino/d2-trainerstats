@@ -22,7 +22,7 @@
   
   <div class="form-group">
     <%= f.label "Select a Role for User:" %> <br />
-    <%= f.select :role, options_for_select(["Trainer", "admin".capitalize!]), class: "form-control" %>
+    <%= f.select(:role, options_for_select(["Trainer", "admin".capitalize!])) %>
   </div>
 
   <div class="actions">
