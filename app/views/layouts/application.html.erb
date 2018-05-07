@@ -35,7 +35,7 @@
     </div>
     <div class="bar">
       <ul id="foot">
-        <li class="pull-right"><%= "Signed in as #{current_user.fullname}" if user_signed_in? %> <%= if !is_admin? then "Lol" %> </li>
+        <li class="pull-right"><%= "Signed in as #{current_user.fullname}" if user_signed_in? %> <%= if !is_admin? then "Lol" end %> </li>
       </ul>
     </div>
   </body>
