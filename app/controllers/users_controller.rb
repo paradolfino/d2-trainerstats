@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     def update
         if @user.update(user_params)
            flash[:notice] = "User #{@user.fullname} has been updated!" 
+           redirect_to '/admin/users'
         else
             flash[:alert] = "There were errors when attempting to update, please review before submitting."
             render 'edit'
