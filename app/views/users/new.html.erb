@@ -21,6 +21,10 @@
   <div class="form-group">
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password", class: "form-control" %>
   </div>
+  
+  <div class="form-group">
+    <%= f.select :role, options_for_select(["admin".capitalize!]) %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Create User", class: "btn btn-primary" %>
