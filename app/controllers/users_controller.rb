@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
-    before_action :require_admin, only: [:new, :index]
+    before_action :require_admin, only: [:new, :index, :edit, :update, :destroy]
     
     def index
         @users = User.all
