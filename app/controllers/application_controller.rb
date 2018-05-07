@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     def not_found
         redirect_to '/public/404.html'
     end
+    
+    def is_admin?
+        
+    end
 
     
     protected
