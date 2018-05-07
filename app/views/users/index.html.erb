@@ -1,0 +1,32 @@
+<h3 class="text-center">Users List</h3>
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Date Created</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number of Trainings</th>
+            <th>Is Admin?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @logs.each do |t| %>
+            <tr>
+                <td><%= t.created_at.strftime("%m/%d/%Y") %></td>
+                <td><%= link_to t.title, log_path(t) %></td>
+                <td><%= t.trainings.count %></td>
+                <% if user_signed_in? %>
+                    <td> <%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %> | 
+                    <% if current_user.role == "admin" %>
+                        <%= link_to fa_icon("trash", text: "Delete"), log_path(t), method: :delete %></td>
+                    <% end %>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+    <div class="options">
+        <% if user_signed_in? %> <%= link_to fa_icon("plus-circle", text: "New Log"), new_log_path %> | <% end %><%= link_to fa_icon("search", text: "View Inactive"), inactive_logs_path %>
+    </div>
