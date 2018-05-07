@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :path_prefix => 'portal'
+  devise_for :users, :path_prefix => 'portal', :skip => 'registrations'
 =begin 
   root 'trainings#new'
   post '/' => 'trainings#create'
