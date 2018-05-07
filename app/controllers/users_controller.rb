@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     end
     
     def update
+        if params[:user][:password].blank?
+          params[:user].delete(:password)
+          params[:user].delete(:password_confirmation)
+        end
         if @user.update(user_params)
            flash[:notice] = "User #{@user.fullname} has been updated!" 
            redirect_to '/admin/users'
