@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
     
     def audit
-        
+        @events = Event.all
     end
     
     
