@@ -59,9 +59,9 @@ class LogsController < ApplicationController
     
     def update
         @log = Log.find(params[:id])
-        @old_title = @log
+        @old = @log
         if @log.update(params_log)
-            @event = Event.create(action: "updated", content: "log #{@old_title} => now #{", user_id: current_user.id)
+            @event = Event.create(action: "updated", content: "log(Title: #{@old.title} Active now #{}", user_id: current_user.id)
             redirect_to logs_path
         else
             render 'edit'
