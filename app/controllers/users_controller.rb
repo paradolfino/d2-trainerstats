@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            create_event("created", "user: #{@user.role} #{@user.fullname}")
             redirect_to '/'
         end
     end
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
     end
     
     def destroy
-        create_event("destroy", "user: #{@user.fullname}")
+        create_event("destroyed", "user: #{@user.fullname}")
         flash[:notice] = "#{@user.fullname} has been destroyed."
         @user.destroy
         redirect_to '/admin/users'
