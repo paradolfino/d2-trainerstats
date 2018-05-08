@@ -36,3 +36,4 @@
 07/05/2018: 21:02 - 21:12:pool[add ability to set new user as admin and fix some language on new user view]
 07/05/2018: 21:12 - 21:34:pool[move users edit/new form into partial]
 08/05/2018: 16:35 - 16:44:pool[small fix to inactive view]
+08/05/2018: 18:52 - 18:53:pool[create event model and reference it in user]
