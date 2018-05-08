@@ -1,1 +1,10 @@
 
+[add events model and controller as an audi trail feature, tracks all actions by users]
+### 08/05/2018[18:52 - 20:56]:
+* create event model and reference it in user
+* create events controller and actions
+* implement event creation on creation of logs
+* set up new view for events audit_trail
+* restrict access to audit trail
+
+What's Next? work on report center

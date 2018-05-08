@@ -36,3 +36,8 @@
 07/05/2018: 21:02 - 21:12:pool[add ability to set new user as admin and fix some language on new user view]
 07/05/2018: 21:12 - 21:34:pool[move users edit/new form into partial]
 08/05/2018: 16:35 - 16:44:pool[small fix to inactive view]
+08/05/2018: 18:52 - 18:53:pool[create event model and reference it in user]
+08/05/2018: 18:53 - 18:56:pool[create events controller and actions]
+08/05/2018: 18:56 - 20:20:pool[implement event creation on creation of logs]
+08/05/2018: 20:20 - 20:54:pool[set up new view for events audit_trail]
+08/05/2018: 20:54 - 20:56:pool[restrict access to audit trail]

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            create_event("created", "user: #{@user.role} #{@user.fullname}")
             redirect_to '/'
         end
     end
@@ -28,8 +29,9 @@ class UsersController < ApplicationController
           params[:user].delete(:password_confirmation)
         end
         if @user.update(user_params)
-           flash[:notice] = "User #{@user.fullname} has been updated!" 
-           redirect_to '/admin/users'
+            create_event("updated", "user: #{@user.fullname}")
+            flash[:notice] = "User #{@user.fullname} has been updated!" 
+            redirect_to '/admin/users'
         else
             flash[:alert] = "There were errors when attempting to update, please review before submitting."
             render 'edit'
@@ -37,6 +39,7 @@ class UsersController < ApplicationController
     end
     
     def destroy
+        create_event("destroyed", "user: #{@user.fullname}")
         flash[:notice] = "#{@user.fullname} has been destroyed."
         @user.destroy
         redirect_to '/admin/users'
