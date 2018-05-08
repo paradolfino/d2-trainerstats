@@ -70,7 +70,7 @@ class LogsController < ApplicationController
     end
     
     def destroy
-        create_event("destroyed", "log(ID: #{@log.id}, Title: #{@log.title})")
+        create_event("destroyed", "log with ID: #{@log.id}, Title: #{@log.title}")
         @log.destroy
         redirect_to logs_path
         
