@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
     
     def destroy
-        create_event("updated", "user: #{@user.fullname}")
+        create_event("destroy", "user: #{@user.fullname}")
         flash[:notice] = "#{@user.fullname} has been destroyed."
         @user.destroy
         redirect_to '/admin/users'
