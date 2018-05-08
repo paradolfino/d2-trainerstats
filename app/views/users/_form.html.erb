@@ -17,10 +17,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "password", placeholder: "Confirm Password", class: "form-control" %>
   </div>
   
-  <div class="form-group">
-    <%= f.label "Select a Role for User:" %> <br />
-    <%= f.select(:role, options_for_select(["Trainer", "Admin"])) %>
-  </div>
+  <% if is_admin? %>
+    <div class="form-group">
+      <%= f.label "Select a Role for User:" %> <br />
+      <%= f.select(:role, options_for_select(["Trainer", "Admin"])) %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "#{val} User", class: "btn btn-primary" %>
