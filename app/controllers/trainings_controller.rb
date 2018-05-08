@@ -21,6 +21,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build(training_params)
         if @training.save
+            create_event("created", "#{@training.status} training for #{@training.member} from #{@training.company}")
             redirect_to @log
         else
             render 'new'
