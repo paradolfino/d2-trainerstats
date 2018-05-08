@@ -4,6 +4,10 @@ class EventsController < ApplicationController
         @events = Event.all
     end
     
+    def create
+       @event = Event.new(event_params) 
+    end
+    
     
     private
         
