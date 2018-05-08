@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_215336) do
+ActiveRecord::Schema.define(version: 2018_05_08_185141) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "action"
+    t.string "content"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
 
   create_table "logs", force: :cascade do |t|
     t.string "title"
