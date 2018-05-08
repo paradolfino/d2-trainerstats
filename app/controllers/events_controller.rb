@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
     
     def audit
-        @events = Event.all
+        @events = Event.all.order('id DESC')
     end
     
     def create
