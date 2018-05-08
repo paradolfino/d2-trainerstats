@@ -19,6 +19,21 @@ class ApplicationController < ActionController::Base
         end
     end
     
+    def require_same_user(user)
+        if is_admin?
+            if current_user.id != user.id && user.role == "Admin"
+                flash[:alert] = "You can't edit other admins!"
+                redirect_to '/'
+            end
+        else    
+            if current_user.id != user.id
+                flash[:alert] = "Something went wrong!"
+                redirect_to '/'
+            end
+        end
+        
+    end
+    
     def create_event(action, content)
         @event = Event.create(action: action, content: content, user_id: current_user.id)
     end
