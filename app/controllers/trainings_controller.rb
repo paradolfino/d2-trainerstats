@@ -37,6 +37,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.find(params[:id]) 
         if @training.update(training_params)
+            create_event("updated", "#{@training.status} training for #{@training.member} from #{@training.company}")
             redirect_to @log
         else
             render 'edit'
