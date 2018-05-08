@@ -48,7 +48,7 @@ class LogsController < ApplicationController
     def create
         @log = Log.new(params_log)
         if @log.save
-            @event = Event.create(action: "created", content: "log #{@log.title}", user_id: current_user.id)
+            @event = Event.create(action: "created", content: "log(Title: #{@log.title} Active: #{@log.active})", user_id: current_user.id)
             redirect_to @log
         else
             render 'new'
