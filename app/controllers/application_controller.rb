@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
            redirect_to '/'
         end
     end
+    
+    def create_event(action, content)
+        @event = Event.create(action: action, content: content, user_id: current_user.id)
+    end
 
     
     protected
