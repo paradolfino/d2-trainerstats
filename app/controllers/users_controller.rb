@@ -28,6 +28,7 @@ class UsersController < ApplicationController
           params[:user].delete(:password_confirmation)
         end
         if @user.update(user_params)
+            create_event("update", "user: #{@user.fullname}")
            flash[:notice] = "User #{@user.fullname} has been updated!" 
            redirect_to '/admin/users'
         else
