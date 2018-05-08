@@ -38,3 +38,4 @@
 08/05/2018: 16:35 - 16:44:pool[small fix to inactive view]
 08/05/2018: 18:52 - 18:53:pool[create event model and reference it in user]
 08/05/2018: 18:53 - 18:56:pool[create events controller and actions]
+08/05/2018: 18:56 - 20:20:pool[implement event creation on creation of logs]
