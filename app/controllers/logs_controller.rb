@@ -62,7 +62,7 @@ class LogsController < ApplicationController
         @log = Log.find(params[:id])
         @old_title = @log.title
         if @log.update(params_log)
-            @event = Event.create(action: "updated", content: "log(Title: #{@old_title}) to Title: #{@log.title} Active: #{@log.active}", user_id: current_user.id)
+            create_event("updated", "log(Title: #{@old_title}) to Title: #{@log.title} Active: #{@log.active}")
             redirect_to logs_path
         else
             render 'edit'
@@ -102,4 +102,6 @@ class LogsController < ApplicationController
             @all_logs = Log.all
             @total_trainings = all_trainings(@all_logs)
         end
+        
+        
 end
