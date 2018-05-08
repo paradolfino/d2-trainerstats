@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    before_action :require_admin
     
     def audit
         @events = Event.all.order('id DESC')
