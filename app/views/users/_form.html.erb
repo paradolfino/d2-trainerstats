@@ -28,4 +28,6 @@
     <%= f.submit "#{val} User", class: "btn btn-primary" %>
     <%= link_to "Back", :back %>
   </div>
+  <br />
+  <p class="text-center"><%= link_to "Cancel Account", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %></p>
 <% end %>
