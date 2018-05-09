@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
     
     def edit
-        
+        require_same_user(@user)
     end
     
     def update
@@ -39,8 +39,9 @@ class UsersController < ApplicationController
     end
     
     def destroy
+        require_same_user(@user)
         create_event("destroyed", "user: #{@user.fullname}")
-        flash[:notice] = "#{@user.fullname} has been destroyed."
+        flash[:notice] = "#{@user.fullname} has been deleted."
         @user.destroy
         redirect_to '/admin/users'
     end

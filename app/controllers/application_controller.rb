@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     def require_same_user(user)
         if is_admin?
             if current_user.id != user.id && user.role == "Admin"
-                flash[:alert] = "You can't edit other admins!"
+                flash[:alert] = "You can't modify or delete other admins!"
                 redirect_to '/'
             end
         else    
