@@ -41,3 +41,4 @@
 08/05/2018: 18:56 - 20:20:pool[implement event creation on creation of logs]
 08/05/2018: 20:20 - 20:54:pool[set up new view for events audit_trail]
 08/05/2018: 20:54 - 20:56:pool[restrict access to audit trail]
+10/05/2018: 15:53 - 15:56:pool[add ability to send sort params to logs show view]
