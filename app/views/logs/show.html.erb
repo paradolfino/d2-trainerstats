@@ -43,6 +43,8 @@
 
 <script>
     function test(word) {
-        alert($("#users").find(":selected").text());
+        val = $("#users").find(":selected").text();
+        
+        window.location.replace("/logs/" + <%= @log.id %> + "?sort=" + val);
     }
 </script>
