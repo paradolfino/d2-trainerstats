@@ -27,6 +27,7 @@ class LogsController < ApplicationController
     end
     
     def show
+        @users = User.all
         if params[:sort]
             @trainings = @log.trainings.where(trainer: params[:sort]).order('id DESC')
         else
