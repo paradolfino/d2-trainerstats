@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     include Response
+    include Encode
     before_action :configure_permitted_parameters, if: :devise_controller?
     helper_method :is_admin?
     

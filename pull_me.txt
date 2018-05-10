@@ -1,10 +1,8 @@
 
-[add events model and controller as an audi trail feature, tracks all actions by users]
-### 08/05/2018[18:52 - 20:56]:
-* create event model and reference it in user
-* create events controller and actions
-* implement event creation on creation of logs
-* set up new view for events audit_trail
-* restrict access to audit trail
+[add filtering functionality for trainer on logs show view, change Trainer option in trainings form to show only actual Users]
+### 10/05/2018[15:53 - 16:58]:
+* add ability to send sort params to logs show view
+* add filtering functionality to logs show page
+* change add/edit training to allow selecting only users for Trainer and current_user as default
 
-What's Next? work on report center
+What's Next? that's it for now

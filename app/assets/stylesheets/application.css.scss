@@ -26,7 +26,10 @@
     list-style: none;
 }
 
-
+#filter {
+    border: none;
+    font-weight: bold;
+}
 
 #content {
     height: 900px;
@@ -98,6 +101,7 @@
 }
 
 body * {
+    font-family: "Segoe UI", "Arial", sans-serif;
     transition: all 0.5s;
 }
 
