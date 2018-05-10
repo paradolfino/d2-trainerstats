@@ -42,9 +42,8 @@
 </div>
 
 <script>
-    function test(word) {
+    function test() {
         val = $("#users").find(":selected").text();
-        
         window.location.replace("/logs/" + <%= @log.id %> + "?sort=" + val);
     }
 </script>
