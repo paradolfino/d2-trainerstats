@@ -1,0 +1,2 @@
+class CancellationLogsController < ApplicationController
+end
