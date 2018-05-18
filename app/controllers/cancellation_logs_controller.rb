@@ -105,7 +105,7 @@ class CancellationLogsController < ApplicationController
         end
         
         def total_cancellations
-            @all_logs = Log.all
+            @all_logs = CancellationLog.all
             @total_cancellations = all_cancellations(@all_logs)
         end
         
