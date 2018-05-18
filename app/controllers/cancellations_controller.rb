@@ -11,7 +11,6 @@ class CancellationsController < ApplicationController
     def new
         @log = CancellationLog.find(params[:cancellation_log_id])
         @cancellation = @log.cancellations.build
-        @trainers = User.all
     end
     
     def create
