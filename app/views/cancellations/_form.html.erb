@@ -3,8 +3,8 @@
     <p><%= t.text_field :member %></p>
     <%= t.label :company %>
     <p><%= t.text_field :company %></p>
-    <%= t.label "Trainer" %>
-    <p><%= t.select(:trainer, options_from_collection_for_select(@trainers, :fullname, :fullname), prompt: "Select A Trainer") %></p>
+    <%= t.label "Reason for Cancelling" %>
+    <p><%= t.select(:reason, options_from_collection_for_select(@trainers, :fullname, :fullname), prompt: "Select A Reason") %></p>
     <%= t.label "Notes" %>
     <p><%= t.text_area :notes %></p>
     <p><%= t.submit "Submit" %></p>
