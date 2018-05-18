@@ -1,11 +1,7 @@
 class TrainingsController < ApplicationController
     #before_action :set_training, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:show]
     
-    def index
-        @log = Log.find(params[:log_id])
-        @trainigns = @log.trainings
-    end
     
     def show
         @log = Log.find(params[:id])

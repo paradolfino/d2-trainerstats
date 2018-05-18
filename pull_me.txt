@@ -1,8 +1,1 @@
 
-[add filtering functionality for trainer on logs show view, change Trainer option in trainings form to show only actual Users]
-### 10/05/2018[15:53 - 16:58]:
-* add ability to send sort params to logs show view
-* add filtering functionality to logs show page
-* change add/edit training to allow selecting only users for Trainer and current_user as default
-
-What's Next? that's it for now
