@@ -1,7 +1,7 @@
 class CancellationLogsController < ApplicationController
     
     before_action :set_log, only: [:show, :edit, :destroy]
-    before_action :total_trainings, only: [:index, :inactive]
+    before_action :total_cancellations, only: [:index, :inactive]
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
@@ -28,19 +28,19 @@ class CancellationLogsController < ApplicationController
     def show
         @users = User.all
         if params[:sort]
-            @trainings = @log.trainings.where(trainer: params[:sort]).order('id DESC')
+            @cancellations = @log.cancellations.where(trainer: params[:sort]).order('id DESC')
         else
-            @trainings = @log.trainings.order('id DESC')
+            @cancellations = @log.cancellations.order('id DESC')
         end
-        @count = @trainings.count
+        @count = @cancellations.count
         
         respond_to do |format|
             format.html
             format.json { 
-                    json_response(@log.to_json(:include => [:trainings]))  
+                    json_response(@log.to_json(:include => [:cancellations]))  
             }
-            format.csv { send_data @trainings.to_csv, filename: "#{@log.title}.csv" }
-            format.xls { send_data @trainings.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
+            format.csv { send_data @cancellations.to_csv, filename: "#{@log.title}.csv" }
+            format.xls { send_data @cancellations.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
         
         
@@ -53,7 +53,7 @@ class CancellationLogsController < ApplicationController
     def create
         @log = Log.new(params_log)
         if @log.save
-            create_event("created", "log with ID: #{@log.id}, Title: #{@log.title}")
+            create_event("created", "cancellation log with ID: #{@log.id}, Title: #{@log.title}")
             redirect_to @log
         else
             render 'new'
@@ -96,17 +96,17 @@ class CancellationLogsController < ApplicationController
             params.require(:log).permit(:title, :active) 
         end
         
-        def all_trainings(logs)
+        def all_cancellations(logs)
             training_arr = []
             logs.each do |l|
-                 training_arr.push(l.trainings.count)
+                 training_arr.push(l.cancellations.count)
             end
             training_arr.reduce(&:+)
         end
         
-        def total_trainings
+        def total_cancellations
             @all_logs = Log.all
-            @total_trainings = all_trainings(@all_logs)
+            @total_cancellations = all_cancellations(@all_logs)
         end
         
         
