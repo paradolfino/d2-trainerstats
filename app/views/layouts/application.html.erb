@@ -18,10 +18,7 @@
           <%= link_to "View Training Logs", logs_path %>
         </li>
         <li>
-          <%= link_to "View Cancellation Logs", about_path %>
-        </li>
-        <li>
-          <%= link_to "Support", support_path %>
+          <%= link_to "View Cancellation Logs", "/" %>
         </li>
         <% if !user_signed_in? %>
           <li class="pull-right"><%= link_to "Login", new_user_session_path %></li>
