@@ -5,9 +5,9 @@ class CancellationLogsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
-        @logs = Log.where(active: true).order('id DESC')
+        @logs = CancellationLog.where(active: true).order('id DESC')
         @active = @logs.count
-        @total = Log.all.count
+        @total = CancellationLog.all.count
         respond_to do |format|
             format.html
             format.json { json_response(@all_logs)}
@@ -16,9 +16,8 @@ class CancellationLogsController < ApplicationController
     end
     
     def inactive
-        @logs = Log.where(active: false).order('id DESC')
-        @inactive = @logs.count
-        @total = Log.all.count
+        @logs = CancellationLog.where(active: false).order('id DESC')
+        @total = CancellationLog.all.count
         
         respond_to do |format|
             format.html
