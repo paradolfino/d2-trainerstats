@@ -93,15 +93,15 @@ class CancellationLogsController < ApplicationController
         end
         
         def params_log
-            params.require(:log).permit(:title, :active) 
+            params.require(:log).permit(:title) 
         end
         
         def all_cancellations(logs)
-            training_arr = []
+            cancellations_arr = []
             logs.each do |l|
-                 training_arr.push(l.cancellations.count)
+                 cancellations_arr.push(l.cancellations.count)
             end
-            training_arr.reduce(&:+)
+            cancellations_arr.reduce(&:+)
         end
         
         def total_cancellations
