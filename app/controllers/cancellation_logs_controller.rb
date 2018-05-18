@@ -1,7 +1,7 @@
 class CancellationLogsController < ApplicationController
     
     before_action :set_log, only: [:show, :edit, :destroy]
-    before_action :total_cancellations, only: [:index, :inactive]
+    before_action :total_cancellations, only: [:index]
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
