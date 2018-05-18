@@ -48,3 +48,4 @@
 18/05/2018: 19:26 - 19:29:pool[create cancellation_log model]
 18/05/2018: 19:29 - 19:43:pool[create cancellation model]
 18/05/2018: 19:43 - 19:57:pool[create cancellation_log and cancellations controllers]
+18/05/2018: 19:57 - 20:33:pool[set up cancel routes and views]
