@@ -1,21 +1,17 @@
-<div class="training">
+<div class="cancellation">
     <h5>Member</h5>
-    <p><%= @training.member %></p>
+    <p><%= @cancellation.member %></p>
     <h5>Company</h5>
-    <p><%= @training.company %></p>
+    <p><%= @cancellation.company %></p>
     <h5>Trainer</h5>
-    <p><%= @training.trainer %></p>
-    <h5>Stage</h5>
-    <p><%= @training.stage %></p>
-    <h5>Status</h5>
-    <p><%= @training.status %></p>
+    <p><%= @cancellation.trainer %></p>
     <h5>Notes</h5>
-    <p id="notes"><%= @training.notes %></p>
+    <p id="notes"><%= @cancellation.notes %></p>
     
 </div>
 <div class="options">
     <% if user_signed_in?  %>
-        <%= link_to fa_icon("edit", text: "Edit Training"), edit_log_training_path(@training) %> 
+        <%= link_to fa_icon("edit", text: "Edit Training"), edit_log_cancellation_path(@cancellation) %> 
     <% end %>
-    <%= link_to "Back to the Trainings Log", log_path(@training.log) %>
+    <%= link_to "Back to the Trainings Log", log_path(@cancellation.log) %>
 </div>
