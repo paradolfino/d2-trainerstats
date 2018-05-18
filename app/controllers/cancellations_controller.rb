@@ -35,7 +35,7 @@ class CancellationsController < ApplicationController
         @log = CancellationLog.find(params[:log_id])
         @cancellation = @log.cancellations.find(params[:id]) 
         if @cancellation.update(cancellation_params)
-            create_event("updated", "#{@cancellation.status} cancellation for #{@cancellation.member} from #{@cancellation.company}")
+            create_event("updated", "#{@cancellation.reason} cancellation for #{@cancellation.member} from #{@cancellation.company}")
             redirect_to @log
         else
             render 'edit'
