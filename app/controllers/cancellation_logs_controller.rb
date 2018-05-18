@@ -47,11 +47,11 @@ class CancellationLogsController < ApplicationController
     end
     
     def new
-       @log = Log.new 
+       @log = CancellationLog.new 
     end
     
     def create
-        @log = Log.new(params_log)
+        @log = CancellationLog.new(params_log)
         if @log.save
             create_event("created", "cancellation log with ID: #{@log.id}, Title: #{@log.title}")
             redirect_to @log
@@ -64,7 +64,7 @@ class CancellationLogsController < ApplicationController
     
     def update
         
-        @log = Log.find(params[:id])
+        @log = CancellationLog.find(params[:id])
         @old_title = @log.title
         if @log.update(params_log)
             create_event("updated", "cancellation log with ID: #{@log.id}, Title: #{@old_title} to (Title: #{@log.title})")
