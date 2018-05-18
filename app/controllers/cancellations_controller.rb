@@ -45,7 +45,7 @@ class CancellationsController < ApplicationController
     def destroy
         @log = CancellationLog.find(params[:id])
         @cancellation = @log.cancellations.find(params[:log_id])
-        create_event("destroyed", "#{@cancellation.status} cancellation for #{@cancellation.member} from #{@cancellation.company}")
+        create_event("destroyed", "#{@cancellation.reason} cancellation for #{@cancellation.member} from #{@cancellation.company}")
         @cancellation.destroy 
         redirect_to @log
     end
