@@ -1,14 +1,10 @@
-<%= form_for ([@log, @training]) do |t| %>
+<%= form_for ([@log, @cancellation]) do |t| %>
     <%= t.label :member %>
     <p><%= t.text_field :member %></p>
     <%= t.label :company %>
     <p><%= t.text_field :company %></p>
     <%= t.label "Trainer" %>
     <p><%= t.select(:trainer, options_from_collection_for_select(@trainers, :fullname, :fullname), prompt: "Select A Trainer") %></p>
-    <%= t.label "Type of Training" %>
-    <p><%= t.select(:stage, options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-one"])) %></p>
-    <%= t.label "Status" %>
-    <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"])) %></p>
     <%= t.label "Notes" %>
     <p><%= t.text_area :notes %></p>
     <p><%= t.submit "Submit" %></p>
