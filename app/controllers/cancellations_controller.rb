@@ -51,7 +51,7 @@ class CancellationsController < ApplicationController
     private
     
         def cancellation_params
-           params.require(:cancellation).permit(:member, :company, :reason, :notes, :cancellation_cancellation_log_id) 
+           params.require(:cancellation).permit(:member, :company, :reason, :notes, :cancellation_log_id) 
         end
         
         def set_cancellation
