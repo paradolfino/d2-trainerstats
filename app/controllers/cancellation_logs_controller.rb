@@ -74,7 +74,7 @@ class CancellationLogsController < ApplicationController
     
         def set_log
            if CancellationLog.where(id: params[:id]).exists?
-               @log = Log.find(params[:id])
+               @log = CancellationLog.find(params[:id])
            else
                not_found
                
