@@ -6,7 +6,6 @@ class CancellationLogsController < ApplicationController
     
     def index
         @logs = CancellationLog.where(active: true).order('id DESC')
-        @active = @logs.count
         @total = CancellationLog.all.count
         respond_to do |format|
             format.html
