@@ -82,7 +82,7 @@ class CancellationLogsController < ApplicationController
         end
         
         def params_log
-            params.require(:log).permit(:title) 
+            params.require(:cancellation_log).permit(:title) 
         end
         
         def all_cancellations(logs)
