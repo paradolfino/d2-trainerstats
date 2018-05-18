@@ -27,7 +27,7 @@
                 <% else %>
                     <td>Yes</td>
                 <% end %>
-                <td><%= link_to fa_icon("search", text: "View"), log_training_path(t) %> <% if is_admin? %>| <%= link_to fa_icon("trash", text: "Delete"), log_training_path(t), method: :delete %></td><% end %>
+                <td><%= link_to fa_icon("search", text: "View"), cancellation_log_cancellation_path(t) %> <% if is_admin? %>| <%= link_to fa_icon("trash", text: "Delete"), cancellation_log_cancellation_path(t), method: :delete %></td><% end %>
             </tr>
         <% end %>
     </tbody>
