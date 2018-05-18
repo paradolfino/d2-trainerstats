@@ -1,0 +1,2 @@
+class CancellationLog < ApplicationRecord
+end
