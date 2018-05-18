@@ -75,7 +75,7 @@ class CancellationLogsController < ApplicationController
     end
     
     def destroy
-        create_event("destroyed", "log with ID: #{@log.id}, Title: #{@log.title}")
+        create_event("destroyed", "cancellation log with ID: #{@log.id}, Title: #{@log.title}")
         @log.destroy
         redirect_to logs_path
         
