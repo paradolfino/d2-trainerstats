@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_08_185141) do
+ActiveRecord::Schema.define(version: 2018_05_18_193102) do
+
+  create_table "cancellation_logs", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cancellations", force: :cascade do |t|
+    t.string "member"
+    t.string "company"
+    t.string "reason"
+    t.text "notes"
+    t.integer "cancellation_log_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cancellation_log_id"], name: "index_cancellations_on_cancellation_log_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "action"
