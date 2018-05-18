@@ -13,5 +13,5 @@
     <% if user_signed_in?  %>
         <%= link_to fa_icon("edit", text: "Edit Cancellation"), edit_cancellation_log_cancellation_path(@cancellation) %> 
     <% end %>
-    <%= link_to "Back to the Trainings Log", log_path(@cancellation.log) %>
+    <%= link_to "Back to the Trainings Log", cancellation_log_path(@cancellation.cancellation_log) %>
 </div>
