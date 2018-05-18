@@ -67,7 +67,7 @@ class CancellationLogsController < ApplicationController
         @log = Log.find(params[:id])
         @old_title = @log.title
         if @log.update(params_log)
-            create_event("updated", "log with ID: #{@log.id}, Title: #{@old_title} to (Title: #{@log.title}, Active: #{@log.active})")
+            create_event("updated", "cancellation log with ID: #{@log.id}, Title: #{@old_title} to (Title: #{@log.title})")
             redirect_to logs_path
         else
             render 'edit'
