@@ -28,7 +28,7 @@ class CancellationLogsController < ApplicationController
     def show
         @users = User.all
         if params[:sort]
-            @cancellations = @log.cancellations.where(trainer: params[:sort]).order('id DESC')
+            @cancellations = @log.cancellations.where(reason: params[:sort]).order('id DESC')
         else
             @cancellations = @log.cancellations.order('id DESC')
         end
