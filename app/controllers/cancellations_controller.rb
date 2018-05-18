@@ -5,17 +5,17 @@ class CancellationsController < ApplicationController
     
     def show
         @log = CancellationLog.find(params[:id])
-        @cancellation = @log.cancellations.find(params[:log_id])
+        @cancellation = @log.cancellations.find(params[:cancellation_log_id])
     end
     
     def new
-        @log = CancellationLog.find(params[:log_id])
+        @log = CancellationLog.find(params[:cancellation_log_id])
         @cancellation = @log.cancellations.build
         @trainers = User.all
     end
     
     def create
-        @log = CancellationLog.find(params[:log_id])
+        @log = CancellationLog.find(params[:cancellation_log_id])
         @cancellation = @log.cancellations.build(cancellation_params)
         if @cancellation.save
             create_event("created", "#{@cancellation.reason} cancellation for #{@cancellation.member} from #{@cancellation.company}")
@@ -27,12 +27,11 @@ class CancellationsController < ApplicationController
     
     def edit
         @log = CancellationLog.find(params[:id])
-        @cancellation = @log.cancellations.find(params[:log_id])
-        @trainers = User.all
+        @cancellation = @log.cancellations.find(params[:cancellation_log_id])
     end
     
     def update
-        @log = CancellationLog.find(params[:log_id])
+        @log = CancellationLog.find(params[:cancellation_log_id])
         @cancellation = @log.cancellations.find(params[:id]) 
         if @cancellation.update(cancellation_params)
             create_event("updated", "#{@cancellation.reason} cancellation for #{@cancellation.member} from #{@cancellation.company}")
@@ -44,7 +43,7 @@ class CancellationsController < ApplicationController
     
     def destroy
         @log = CancellationLog.find(params[:id])
-        @cancellation = @log.cancellations.find(params[:log_id])
+        @cancellation = @log.cancellations.find(params[:cancellation_log_id])
         create_event("destroyed", "#{@cancellation.reason} cancellation for #{@cancellation.member} from #{@cancellation.company}")
         @cancellation.destroy 
         redirect_to @log
@@ -53,11 +52,11 @@ class CancellationsController < ApplicationController
     private
     
         def cancellation_params
-           params.require(:cancellation).permit(:member, :company, :reason, :notes, :cancellation_log_id) 
+           params.require(:cancellation).permit(:member, :company, :reason, :notes, :cancellation_cancellation_log_id) 
         end
         
         def set_cancellation
             @log = CancellationLog.find(params[:id])
-            @cancellation = @log.cancellations.find(params[:log_id]) 
+            @cancellation = @log.cancellations.find(params[:cancellation_log_id]) 
         end
 end
