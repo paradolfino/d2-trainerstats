@@ -72,12 +72,15 @@
     }
 }
 
-.training #notes {
-    margin: 0 auto;
-    height: 100px;
-    width: 300px;
-    overflow-y: auto;
-    word-wrap: break-word
+.training, .cancellation {
+    #notes {
+        margin: 0 auto;
+        height: 100px;
+        width: 300px;
+        overflow-y: auto;
+        word-wrap: break-word;
+    }
+    
 }
 
 .options {
