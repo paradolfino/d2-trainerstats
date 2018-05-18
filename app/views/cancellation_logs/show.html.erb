@@ -9,7 +9,7 @@
             <th>Training Date/Time Logged</th>
             <th>Member Name</th>
             <th>Company Name</th>
-            <th><%= select_tag "filter", options_for_select(), :onchange => "filter()", prompt: "Reason" %></th>
+            <th><%= select_tag "filter", options_for_select(["Costs Too Much", "Not Enough Features", "Going with Competitor", "Not Enough Time"]), :onchange => "filter()", prompt: "Reason" %></th>
             <th>Has Notes</th>
             <th></th>
         </tr>
