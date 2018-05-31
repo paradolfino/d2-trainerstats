@@ -1,5 +1,5 @@
 <div class="search-bar">
     <%= select_tag "search", options_for_select(["Member Name", "2nd Launch", "Follow Up", "One-on-one"]), prompt: "Select Filter" %>
-    <%= text_field_tag "search-field", class: "search-field" %>
-    <button class="search-btn"></button>
+    <%= text_field_tag "search-field", nil, class: "search-field" %>
+    <button class="search-btn">Search</button>
 </div>
