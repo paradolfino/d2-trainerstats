@@ -6,6 +6,13 @@ class LogsController < ApplicationController
     
     def search
         if params[:query]
+            case params[:type]
+            
+            when "Member Name"
+                
+            else
+                
+            end
             
         else
             
