@@ -8,6 +8,11 @@ class LogsController < ApplicationController
         @trainings = {}
         @logs = Log.order('id DESC')
         @users = User.all
+        
+        @logs.each do |log|
+            
+        end
+        
         if params[:query]
             case params[:type]
             
