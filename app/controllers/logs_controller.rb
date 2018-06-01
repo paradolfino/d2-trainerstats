@@ -5,12 +5,12 @@ class LogsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     
     def search
-        @trainings = []
+        @trainings = {}
         @logs = Log.order('id DESC')
         @users = User.all
         
         @logs.each do |log|
-            @trainings << log.trainings.to_a
+            @trainings << log.trainings.to_h
         end
         
         if params[:query]
