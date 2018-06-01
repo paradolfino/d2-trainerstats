@@ -11,7 +11,7 @@ class LogsController < ApplicationController
         
         @logs.each do |log|
             @training_attrs = {}
-            @training_attrs = log.trainings.to_h
+            @training_attrs = log.trainings
             @trainings[log.id] = @training_attrs
         end
         
