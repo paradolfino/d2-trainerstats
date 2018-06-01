@@ -10,7 +10,7 @@ class LogsController < ApplicationController
         @users = User.all
         
         @logs.each do |log|
-            @trainings << log.trainings.to_h
+            @trainings[log.id] = log.trainings
         end
         
         if params[:query]
