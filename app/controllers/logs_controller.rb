@@ -4,6 +4,10 @@ class LogsController < ApplicationController
     before_action :total_trainings, only: [:index, :inactive]
     before_action :authenticate_user!, except: [:index, :show]
     
+    def search
+        
+    end
+    
     def index
         @logs = Log.where(active: true).order('id DESC')
         @active = @logs.count
