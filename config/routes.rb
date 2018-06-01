@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   get '/thanks' => 'tickets#thanks'
   get '/about' => 'tickets#about'
   
+  get '/search' => 'logs#search'
+  
   
 end
