@@ -6,31 +6,19 @@ class LogsController < ApplicationController
     
     def search
         @trainings = {}
-        @logs = Log.order('id DESC')
+        @logs = Log.all
         @users = User.all
-        
+        @query = params[:query]
+        @string = params[:string]
         @logs.each do |log|
-            @training_attrs = {}
-            @training_attrs = log.trainings
-            @trainings[log.id] = @training_attrs
-        end
-        
-        if params[:query]
-            case params[:type]
             
-            when "Member Name"
-                
-            when "Company Name"
-                
-            when "Stage"
-                
-            when "Status"
-                
-            else
-                
+            log.trainings.each do |t|
+                @training_attrs = {}
+                t.attributes.each do |name, value|
+                    @training_attrs[name] = value
+                end
+                @trainings[t.id] = {:info => @training_attrs}
             end
-            
-        else
             
         end
     end
