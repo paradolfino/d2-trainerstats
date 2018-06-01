@@ -32,9 +32,3 @@
         <% end %>
     </tbody>
 </table>
-<script>
-    function filter() {
-        val = $("#filter").find(":selected").text();
-        window.location.replace("/logs/" + <%= @log.id %> + "?sort=" + val);
-    }
-</script>
