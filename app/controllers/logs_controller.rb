@@ -10,6 +10,12 @@ class LogsController < ApplicationController
             
             when "Member Name"
                 
+            when "Company Name"
+                
+            when "Stage"
+                
+            when "Status"
+                
             else
                 
             end
