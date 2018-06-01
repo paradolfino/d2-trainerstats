@@ -6,7 +6,7 @@ class LogsController < ApplicationController
     
     def search
         @logs = Log.all
-        
+        @users = User.all
         if params[:query]
             case params[:type]
             
