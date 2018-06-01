@@ -5,6 +5,7 @@ class LogsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     
     def search
+        @trainings = {}
         @logs = Log.order('id DESC')
         @users = User.all
         if params[:query]
