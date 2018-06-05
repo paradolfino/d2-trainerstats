@@ -59,3 +59,4 @@
 05/06/2018: 20:58 - 21:36:pool[fix search_compare helper]
 05/06/2018: 21:36 - 21:40:pool[fix logs controller search action to account for nil values]
 05/06/2018: 21:40 - 21:50:pool[create helper method to parse search params]
+05/06/2018: 21:50 - 21:55:pool[implement sanitize_search method into search partial]
