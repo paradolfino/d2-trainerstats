@@ -6,8 +6,8 @@
 
 <script>
     function search() {
-        val = $("#search").find(":selected").text();
-        console.log(val);
-       // window.location.replace("/search?query=" + val);
+            query = $("#search").find(":selected").text();
+            console.log(val);
+            window.location.replace("/search?query=" + query);
     }
 </script>
