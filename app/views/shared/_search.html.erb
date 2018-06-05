@@ -11,8 +11,8 @@
             window.location.replace("/search?query=" + sanitize(query) + "&string=" + string);
     }
     
-    function sanitize() {
-        switch(expression) {
+    function sanitize(query) {
+        switch(query) {
             case "Member Name":
                 return "member";
                 break;
