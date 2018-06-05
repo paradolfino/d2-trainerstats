@@ -52,3 +52,4 @@
 31/05/2018: 21:14 - 21:53:pool[set up skeleton search field partial]
 01/06/2018: 16:39 - 17:33:pool[set up logs controller for search action]
 01/06/2018: 17:33 - 17:44:pool[set up view for search]
+05/06/2018: 20:34 - 20:37:pool[move search partial to show in application layout nav bar]
