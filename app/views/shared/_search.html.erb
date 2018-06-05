@@ -1,5 +1,12 @@
 <div class="search-bar">
     <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Stage", "Status"]), prompt: "Select Filter" %>
     <%= text_field_tag "search-field", nil, class: "search-field" %>
-    <button class="search-btn">Search</button>
+    <button class="search-btn" onclick="search()">Search</button>
 </div>
+
+<script>
+    /*function search() {
+        val = $("#filter").find(":selected").text();
+        window.location.replace("/logs/" + <%= @log.id %> + "?sort=" + val);
+    }*/
+</script>
