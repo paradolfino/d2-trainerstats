@@ -9,7 +9,7 @@ class LogsController < ApplicationController
         @logs = Log.all
         @users = User.all
         @query = params[:query]
-        @string = params[:string].downcase
+        @string = params[:string]
         
         
         @logs.each do |log|
