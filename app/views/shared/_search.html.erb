@@ -8,6 +8,6 @@
     function search() {
             query = $("#search").find(":selected").text();
             string = $("#search-field").val();
-            window.location.replace("/search?query=" + query + "&string=" + string);
+            window.location.replace("/search?query=" + <% sanitize_search(query) %> + "&string=" + string);
     }
 </script>
