@@ -8,11 +8,16 @@ class LogsController < ApplicationController
         @trainings = {}
         @logs = Log.all
         @users = User.all
-        @query = params[:query]
-        @string = params[:string]
-        
         if params[:query]
-            
+            case params[:query]
+            when "Member Name"
+                @query = "member"
+            when "Company Name"
+                @query = "company"
+            else
+                @query = params[:query]
+            end
+            @string = params[:string].downcase
         end
         
         @logs.each do |log|
