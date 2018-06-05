@@ -15,8 +15,8 @@ class LogsController < ApplicationController
             when "Company Name"
                 @query = "company"
             else
-                @query = params[:query]
-                @query.downcase!
+                @query = params[:query].downcase
+                
             end
             @string = params[:string].downcase
         end
