@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def sanitize_search(query, string)
+    def sanitize_search(query)
         case query
             when "Member Name"
                 "member"
@@ -14,6 +14,6 @@ module ApplicationHelper
             end
     end
     def search_compare(query, string)
-        return true if query.include? string
+        return true if query.include? string.downcase
     end
 end
