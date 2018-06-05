@@ -10,6 +10,11 @@ class LogsController < ApplicationController
         @users = User.all
         @query = params[:query]
         @string = params[:string]
+        
+        if params[:query]
+            
+        end
+        
         @logs.each do |log|
             
             log.trainings.each do |t|
