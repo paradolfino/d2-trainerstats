@@ -14,9 +14,12 @@ class LogsController < ApplicationController
                 @query = "member"
             when "Company Name"
                 @query = "company"
-            else
+            when "Stage"
                 @query = params[:query].downcase
-                
+            when "Status"
+                @query = params[:query].downcase
+            else
+                @query = "member"
             end
             @string = params[:string].downcase
         end
