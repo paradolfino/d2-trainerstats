@@ -56,3 +56,4 @@
 05/06/2018: 20:37 - 20:39:pool[fix logs controller search action to allow non-signed-in users to user search function]
 05/06/2018: 20:39 - 20:53:pool[write javascript to navigate user on search button press]
 05/06/2018: 20:53 - 20:58:pool[configure logs search action to change the params for query to a digestible form for database]
+05/06/2018: 20:58 - 21:36:pool[fix search_compare helper]
