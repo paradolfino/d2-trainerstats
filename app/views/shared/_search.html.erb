@@ -1,5 +1,5 @@
 <div class="search-bar">
-    <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Stage", "Status"]), prompt: "Select Filter" %>
+    <%= select_tag "search", options_for_select(["Member Name","member"], ["Company Name", "company"], ["Stage", "stage"], ["Status", "status"]), prompt: "Select Filter" %>
     <%= text_field_tag "search-field", nil, class: "search-field" %>
     <button class="search-btn" onclick="search()">Search</button>
 </div>
