@@ -1,5 +1,5 @@
 module ApplicationHelper
     def search_compare(query, string)
-        return true if query.downcase.include? string.downcase
+        return true if query.include? string
     end
 end
