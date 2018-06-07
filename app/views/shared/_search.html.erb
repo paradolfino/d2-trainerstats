@@ -9,7 +9,6 @@
             query = $("#search").find(":selected").text();
             string = $("#search-field").val();
             query = sanitize(query);
-            console.log(query);
             window.location.replace("/search?query=" + query + "&string=" + string);
     }
     
