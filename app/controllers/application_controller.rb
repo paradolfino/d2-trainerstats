@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     include Encode
     before_action :configure_permitted_parameters, if: :devise_controller?
     helper_method :is_admin?
+    helper_method :search_compare
     
     def not_found
         redirect_to '/public/404.html'
