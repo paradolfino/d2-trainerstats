@@ -23,7 +23,7 @@ class LogsController < ApplicationController
                         @training_attrs[name] = value
                     end
                 end
-                @trainings[t.id] = {:info => @training_attrs}
+                @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
             end
             
         end
