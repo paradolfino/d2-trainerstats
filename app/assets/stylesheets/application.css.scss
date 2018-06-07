@@ -82,7 +82,9 @@
     background: #4286f4;
     color: #fff;
     border:none;
-    cursor: hand;
+    &:hover {
+        cursor: hand;
+    }
 }
 
 .training, .cancellation {
