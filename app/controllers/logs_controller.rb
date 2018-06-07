@@ -17,7 +17,11 @@ class LogsController < ApplicationController
             log.trainings.each do |t|
                 @training_attrs = {}
                 t.attributes.each do |name, value|
-                    @training_attrs[name] = value
+                    if name == "created_at"
+                        @training_attrs[name] = value.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M")
+                    else
+                        @training_attrs[name] = value
+                    end
                 end
                 @trainings[t.id] = {:info => @training_attrs}
             end
