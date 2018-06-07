@@ -61,3 +61,4 @@
 05/06/2018: 21:40 - 21:50:pool[create helper method to parse search params]
 05/06/2018: 21:50 - 21:55:pool[implement sanitize_search method into search partial]
 07/06/2018: 21:08 - 21:21:pool[set up results instance variable and increment it within search_compare for every valid search result]
+07/06/2018: 21:21 - 21:23:pool[remove reference for search_compare helper from search view - it is used in the application controller now]
