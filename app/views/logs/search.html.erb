@@ -30,6 +30,6 @@
 <script>
     function filter() {
         val = $("#filter").find(":selected").text();
-        window.location.replace("/search?query=&string=" + val);
+        window.location.replace("/search?query=trainer&string=" + val.downcase);
     }
 </script>
