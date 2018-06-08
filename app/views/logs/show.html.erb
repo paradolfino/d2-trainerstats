@@ -45,6 +45,6 @@
 <script>
     function filter() {
         val = $("#filter").find(":selected").text();
-        window.location.replace("/logs/" + <%= @log.id %> + "?sort=" + val);
+        window.location.replace("/search?query=trainer&string=" + val);
     }
 </script>
