@@ -47,7 +47,7 @@ class TrainingsController < ApplicationController
         @training = @log.trainings.find(params[:log_id])
         create_event("destroyed", "#{@training.status} training for #{@training.member} from #{@training.company}")
         @training.destroy 
-        redirect_to :back
+        redirect_to "/"
     end
     
     private
