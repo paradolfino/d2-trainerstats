@@ -8,6 +8,7 @@
             <th><%= select_tag "filter", options_from_collection_for_select(@users, :fullname, :fullname), :onchange => "filter()", prompt: "Trainer" %></th>
             <th>Type/Stage</th>
             <th>Status</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +21,7 @@
                     <td><%= t[1][:info]["trainer"] %></td> 
                     <td><%= t[1][:info]["stage"] %></td> 
                     <td><%= t[1][:info]["status"] %></td> 
-                    
+                    <td><td><%= link_to fa_icon("search", text: "View"), log_training_path(t[1][:info]["id"]) %> <% if is_admin? %>| <%= link_to fa_icon("trash", text: "Delete"), log_training_path(t[1][:info]["id"]), method: :delete %></td><% end %></td>
                 </tr>
             <% end %>
         <% end %>
