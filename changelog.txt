@@ -64,3 +64,4 @@
 07/06/2018: 21:21 - 21:23:pool[remove reference for search_compare helper from search view - it is used in the application controller now]
 08/06/2018: 18:08 - 18:09:pool[fix sorting of logs on search view and add placeholder for search field]
 13/06/2018: 19:55 - 20:23:pool[add options column to search view and link to view/delete routes for searched trainings]
+13/06/2018: 20:23 - 20:40:pool[fix trainings destroy action to redirect to :back instead of @log]
