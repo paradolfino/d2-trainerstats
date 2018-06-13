@@ -2,7 +2,6 @@
 <h4 class="text-center">Active: <%= @log.active %></h4>
 <% if params[:sort] %><h5 class="text-center">Showing <%= "#{pluralize(@count, 'training')}" %> for <%= params[:sort] %></h5><% end %>
 <p class="text-center"><%= link_to fa_icon("download", text: "CSV"), log_path(format: "csv") %> | <%= link_to fa_icon("download", text: "XLS"), log_path(format: "xls") %></p>
-<p><%= render 'shared/search' %></p>
 
 
 <table class="table text-center">
