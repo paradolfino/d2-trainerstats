@@ -47,7 +47,11 @@ class TrainingsController < ApplicationController
         @training = @log.trainings.find(params[:log_id])
         create_event("destroyed", "#{@training.status} training for #{@training.member} from #{@training.company}")
         @training.destroy 
-        redirect_to current_page_url
+        if current_page? action: :search
+            redirect_to search_path
+        else
+            redirect_to @log
+        end
     end
     
     private
