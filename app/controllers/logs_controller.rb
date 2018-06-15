@@ -89,7 +89,9 @@ class LogsController < ApplicationController
         end
     end
     
-    def edit; end
+    def edit
+        @title = "Edit Trainings Log"
+    end
     
     def update
         
