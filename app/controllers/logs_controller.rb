@@ -27,6 +27,7 @@ class LogsController < ApplicationController
             end
             
         end
+        @title = "Search"
     end
     
     def index
