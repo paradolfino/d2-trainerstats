@@ -29,6 +29,7 @@ class CancellationsController < ApplicationController
     def edit
         @log = CancellationLog.find(params[:id])
         @cancellation = @log.cancellations.find(params[:cancellation_log_id])
+        @title = "Edit Cancellation"
     end
     
     def update
