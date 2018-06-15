@@ -118,6 +118,16 @@
     }
 }
 
+.form-field {
+    width: 400px;
+}
+
+.form-submit {
+    width: 200px;
+    background: #4286f4;
+    color: #fff;
+}
+
 body * {
     font-family: "Segoe UI", "Arial", sans-serif;
     transition: all 0.5s;
@@ -151,16 +161,6 @@ form {
         padding: 5px;
         width: 200px;
         background: #205375;
-        color: #fff;
-    }
-    
-    .form-field {
-        width: 400px;
-    }
-    
-    .form-submit {
-        width: 200px;
-        background: #4286f4;
         color: #fff;
     }
 }
