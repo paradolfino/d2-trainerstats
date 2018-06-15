@@ -7,5 +7,5 @@
     <p><%= t.select(:reason, options_for_select(["Costs Too Much", "Not Enough Features", "Going with Competitor", "Not Enough Time"]), prompt: "Select A Reason") %></p>
     <%= t.label "Notes" %>
     <p><%= t.text_area :notes %></p>
-    <p><%= t.submit "Submit" %></p>
+    <p><%= t.submit "Submit", class: "form-submit" %></p>
 <% end %>
