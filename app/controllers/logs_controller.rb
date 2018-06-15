@@ -50,6 +50,7 @@ class LogsController < ApplicationController
             format.html
             format.json { json_response(@all_logs)}
         end
+        @title = "Inactive Cancellation Logs"
     end
     
     def show
