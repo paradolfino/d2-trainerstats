@@ -5,6 +5,7 @@ class CancellationLogsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
+        @title = "Cancellations"
         @logs = CancellationLog.order('id DESC')
         @total = CancellationLog.all.count
         respond_to do |format|
