@@ -13,6 +13,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build
         @trainers = User.all
+        @title = "New Training"
     end
     
     def create
