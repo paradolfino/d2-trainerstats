@@ -12,7 +12,8 @@ class CancellationLogsController < ApplicationController
             format.html
             format.json { json_response(@all_logs)}
         end
-        @title = "Cancellation Logs (showing #{@logs.count} containing #{@total} cancellations)"
+        @title = "Cancellation Logs"
+        @subtitle = " (showing #{@logs.count} containing #{@total} cancellations)"
     end
     
     
