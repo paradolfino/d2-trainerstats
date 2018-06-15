@@ -88,10 +88,12 @@
 }
 
 .title {
+    display: flex;
     height: 50px;
     background: #205375;
     color: #fff;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-field {
