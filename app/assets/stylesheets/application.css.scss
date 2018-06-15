@@ -87,6 +87,19 @@
     }
 }
 
+.form-field {
+    width: 400px;
+}
+
+.form-submit {
+    height: 50px;
+    width: 200px;
+    background: #4286f4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
 .training, .cancellation {
     #notes {
         margin: 0 auto;
@@ -118,18 +131,7 @@
     }
 }
 
-.form-field {
-    width: 400px;
-}
 
-.form-submit {
-    height: 50px;
-    width: 200px;
-    background: #4286f4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
 
 body * {
     font-family: "Segoe UI", "Arial", sans-serif;
