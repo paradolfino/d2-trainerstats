@@ -100,6 +100,12 @@
     cursor: pointer;
 }
 
+.form-submit, .search-btn {
+    &:hover {
+        background: #296893;
+    }
+}
+
 .training, .cancellation {
     #notes {
         margin: 0 auto;
