@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     
     def edit
         require_same_user(@user)
+        @title = "Edit User"
     end
     
     def update
