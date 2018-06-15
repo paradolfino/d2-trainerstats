@@ -13,7 +13,6 @@ class CancellationLogsController < ApplicationController
             format.json { json_response(@all_logs)}
         end
         @title = "Cancellation Logs"
-        @subtitle = " (showing #{@logs.count} containing #{@total} cancellations)"
     end
     
     
@@ -35,7 +34,6 @@ class CancellationLogsController < ApplicationController
             format.xls { send_data @cancellations.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
         @title = @log.title
-        @subtitle = " (showing #{@count} cancellations)"
         
     end
     
