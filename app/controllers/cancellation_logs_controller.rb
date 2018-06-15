@@ -38,7 +38,8 @@ class CancellationLogsController < ApplicationController
     end
     
     def new
-       @log = CancellationLog.new 
+       @log = CancellationLog.new
+       @title = "New Log"
     end
     
     def create
