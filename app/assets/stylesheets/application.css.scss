@@ -144,11 +144,18 @@ form, .training, .cancellation {
     border: 1px solid #68a1ff;
 }
 
-form label {
-    margin: 5px 0 10px 0;
-    padding: 10px;
-    width: 200px;
-    background: #205375;
-    color: #fff;
+form {
+
+    label {
+        margin: 5px 0 10px 0;
+        padding: 10px;
+        width: 200px;
+        background: #205375;
+        color: #fff;
+    }
+    
+    input {
+        width: 400px;
+    }
 }
 
