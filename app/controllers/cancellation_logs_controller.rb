@@ -5,14 +5,14 @@ class CancellationLogsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
-        @title = "Cancellations"
+        
         @logs = CancellationLog.order('id DESC')
         @total = CancellationLog.all.count
         respond_to do |format|
             format.html
             format.json { json_response(@all_logs)}
         end
-        
+        @title = "Cancellation Logs (showing #{@total})"
     end
     
     
