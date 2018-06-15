@@ -6,6 +6,7 @@ class TrainingsController < ApplicationController
     def show
         @log = Log.find(params[:id])
         @training = @log.trainings.find(params[:log_id])
+        @title = "Showing Training"
     end
     
     def new
