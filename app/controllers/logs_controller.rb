@@ -70,7 +70,7 @@ class LogsController < ApplicationController
             format.csv { send_data @trainings.to_csv, filename: "#{@log.title}.csv" }
             format.xls { send_data @trainings.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
-        
+        @title = "#{@log.title}"
         
     end
     
