@@ -12,6 +12,7 @@ class CancellationsController < ApplicationController
     def new
         @log = CancellationLog.find(params[:cancellation_log_id])
         @cancellation = @log.cancellations.build
+        @title = "New Cancellation"
     end
     
     def create
