@@ -168,7 +168,7 @@ form, .training, .cancellation {
     text-align: center;
     border: 1px solid #68a1ff;
     
-    h5 {
+    label {
         margin: 5px 0 10px 0;
         padding: 5px;
         width: 200px;
@@ -179,13 +179,6 @@ form, .training, .cancellation {
 
 form {
 
-    label {
-        margin: 5px 0 10px 0;
-        padding: 5px;
-        width: 200px;
-        background: #205375;
-        color: #fff;
-    }
     
     textarea {
         width: 100%;
