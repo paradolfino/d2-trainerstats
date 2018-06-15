@@ -18,6 +18,8 @@ class CancellationLogsController < ApplicationController
     
     
     def show
+        @title = "Cancellation Logs"
+        @subtitle = " (showing #{@logs.count} containing #{@total} cancellations)"
         if params[:sort]
             @cancellations = @log.cancellations.where(reason: params[:sort]).order('id DESC')
         else
