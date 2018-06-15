@@ -38,7 +38,7 @@ class LogsController < ApplicationController
             format.html
             format.json { json_response(@all_logs)}
         end
-        @title = "Cancellation Logs"
+        @title = "Trainings Logs"
     end
     
     def inactive
@@ -50,7 +50,7 @@ class LogsController < ApplicationController
             format.html
             format.json { json_response(@all_logs)}
         end
-        @title = "Inactive Cancellation Logs"
+        @title = "Inactive Trainings Logs"
     end
     
     def show
