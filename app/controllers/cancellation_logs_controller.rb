@@ -52,7 +52,9 @@ class CancellationLogsController < ApplicationController
         end
     end
     
-    def edit; end
+    def edit
+        @title = "Edit Log"    
+    end
     
     def update
         
