@@ -11,5 +11,5 @@
     <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"])) %></p>
     <%= t.label "Notes" %>
     <p><%= t.text_area :notes %></p>
-    <p><%= t.submit "Submit" %></p>
+    <p><%= t.submit "Submit", class: "form-submit" %></p>
 <% end %>
