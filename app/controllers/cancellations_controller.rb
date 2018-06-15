@@ -6,6 +6,7 @@ class CancellationsController < ApplicationController
     def show
         @log = CancellationLog.find(params[:id])
         @cancellation = @log.cancellations.find(params[:cancellation_log_id])
+        @title = "#{@log.title}"
     end
     
     def new
