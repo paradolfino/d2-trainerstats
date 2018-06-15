@@ -68,3 +68,4 @@
 13/06/2018: 20:40 - 20:41:pool[delete extra search bar reference on log show view]
 15/06/2018: 16:41 - 19:14:pool[work on refactor css]
 15/06/2018: 19:14 - 19:40:pool[implement new title bar partial]
+15/06/2018: 19:41 - 19:43:pool[add @title to controllers to show custom titles]
