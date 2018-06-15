@@ -31,6 +31,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:id])
         @training = @log.trainings.find(params[:log_id])
         @trainers = User.all
+        @title = "Edit Training"
     end
     
     def update
