@@ -34,7 +34,7 @@ class CancellationLogsController < ApplicationController
             format.csv { send_data @cancellations.to_csv, filename: "#{@log.title}.csv" }
             format.xls { send_data @cancellations.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
-        @title = @log.name
+        @title = @log.title
         @subtitle = " (showing #{@count} cancellations)"
         
     end
