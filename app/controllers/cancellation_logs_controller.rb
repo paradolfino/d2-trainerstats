@@ -39,7 +39,7 @@ class CancellationLogsController < ApplicationController
     
     def new
        @log = CancellationLog.new
-       @title = "New Log"
+       @title = "New Cancellation Log"
     end
     
     def create
@@ -53,7 +53,7 @@ class CancellationLogsController < ApplicationController
     end
     
     def edit
-        @title = "Edit Log"    
+        @title = "Edit Cancellation Log"    
     end
     
     def update
