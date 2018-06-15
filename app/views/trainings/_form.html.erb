@@ -1,15 +1,15 @@
 <%= form_for ([@log, @training]) do |t| %>
-    <span><%= t.label :member %></span>
+    <%= t.label :member %>
     <p><%= t.text_field :member %></p>
-    <span><%= t.label :company %></span>
+    <%= t.label :company %>
     <p><%= t.text_field :company %></p>
-    <span><%= t.label "Trainer" %></span>
+    <%= t.label "Trainer" %>
     <p><%= t.select(:trainer, options_from_collection_for_select(@trainers, :fullname, :fullname), prompt: "Select A Trainer") %></p>
-    <span><%= t.label "Type of Training" %>
+    <%= t.label "Type of Training" %>
     <p><%= t.select(:stage, options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-one"])) %></p>
-    <span><%= t.label "Status" %></span>
+    <%= t.label "Status" %>
     <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"])) %></p>
-    <span><%= t.label "Notes" %></span>
+    <%= t.label "Notes" %>
     <p><%= t.text_area :notes %></p>
     <p><%= t.submit "Submit" %></p>
 <% end %>
