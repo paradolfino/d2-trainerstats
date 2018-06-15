@@ -75,7 +75,8 @@ class LogsController < ApplicationController
     end
     
     def new
-       @log = Log.new 
+       @log = Log.new
+       @title = "New Trainings Log"
     end
     
     def create
