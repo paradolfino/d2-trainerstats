@@ -47,9 +47,10 @@
         color: white;
         li {
             display: inline-block;
+            padding: 10px;
 
             &:hover {
-                padding: 10px;
+                
                 background-color: #205375;
             }
             
