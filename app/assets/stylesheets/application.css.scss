@@ -50,7 +50,9 @@
             padding: 10px;
             
             a {
-                background: #296893;
+                &:hover {
+                    background-color: #205375;
+                }
             }
            
         }
