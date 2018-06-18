@@ -47,8 +47,8 @@ class ApplicationController < ActionController::Base
         @event = Event.create(action: action, content: content, user_id: current_user.id)
     end
     
-    def trunk(string)
-      string.truncate(30) 
+    def trunk(string, max=30)
+      string.truncate(max) 
     end
 
     
