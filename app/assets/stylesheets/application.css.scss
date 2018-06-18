@@ -47,15 +47,13 @@
         color: white;
         li {
             display: inline-block;
-            
-            
-            a {
+            padding: 10px;
+
+            &:hover {
                 padding: 10px;
-                &:hover {
-                    padding: 10px;
-                    background-color: #205375;
-                }
+                background-color: #205375;
             }
+            
            
         }
     }
