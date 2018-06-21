@@ -36,6 +36,7 @@
     }
     
     function sort(type) {
-        alert(JSON.stringify(<%= @query.to_s %>));
+        var query = <% @query %>;
+        alert(query);
     }
 </script>
