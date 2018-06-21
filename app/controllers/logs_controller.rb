@@ -25,7 +25,11 @@ class LogsController < ApplicationController
                         @training_attrs[name] = value
                     end
                 end
-                @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+                if @type && @sort
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs[@type],@sort)
+                else
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+                end
             end
             
         end
