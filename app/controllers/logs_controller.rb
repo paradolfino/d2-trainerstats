@@ -10,8 +10,7 @@ class LogsController < ApplicationController
         @users = User.all
         @query = params[:query]
         @string = params[:string]
-        @type = params[:type]
-        @sort = params[:sort]
+        @stage = params[:stage]
         @url = request.fullpath.to_s.split("?")[1]
         @results = 0
         
