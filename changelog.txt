@@ -71,3 +71,4 @@
 15/06/2018: 19:41 - 19:43:pool[add @title to controllers to show custom titles]
 18/06/2018: 14:52 - 14:56:pool[work on css/html for search bar]
 21/06/2018: 16:02 - 19:12:pool[sort by stage]
+21/06/2018: 19:42 - 20:04:pool[fix logs controller search action to check stage and status with search_compare]
