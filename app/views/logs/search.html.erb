@@ -7,8 +7,8 @@
             <th>Member Name</th>
             <th>Company Name</th>
             <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
-            <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One", "Demonstration"]), :onchange => "stage()", prompt: "Stage", data: {url: @url} %></th>
-            <th>Status</th>
+            <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One"]), :onchange => "sort('stage')", prompt: "Stage", data: {url: @url} %></th>
+            <th><%= select_tag "status", options_for_select(["Complete", "Incomplete", "No Show""Demonstration"]), :onchange => "sort('status')", prompt: "Status", data: {url: @url} %></th>
             <th>Options</th>
         </tr>
     </thead>
@@ -35,18 +35,19 @@
         window.location.replace("/search?query=trainer&string=" + val.toLowerCase());
     }
     
-    function stage() {
-        var stage = $("#stage").find(":selected").text();
-        var url = $("#stage").data('url');
-        if (url.includes("stage")) {
+    function sort(type) {
+        
+        var string = $("#" + type).find(":selected").text();
+        var url = $("#" + type).data('url');
+        if (url.includes(type)) {
             var query = url.split("&");
             for (i = 0; i < query.length; i++) {
-                query[i].includes("stage") ? query[i] = "stage=" + stage.toLowerCase() : null;
+                query[i].includes(type) ? query[i] = type + "=" + string.toLowerCase() : null;
             }
             window.location.replace("/search?"+ query.join("&"));
         
         } else {
-            window.location.replace("/search?"+ url + "&stage=" + stage.toLowerCase());
+            window.location.replace("/search?"+ url + "&" + type + "=" + string.toLowerCase());
         }
         
     }
