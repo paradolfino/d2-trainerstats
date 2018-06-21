@@ -31,6 +31,7 @@ class LogsController < ApplicationController
                 else
                     @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
                 end
+                puts url
             end
             
         end
