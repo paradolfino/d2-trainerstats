@@ -41,7 +41,7 @@
         if (url.includes("stage")) {
             var query = url.split("&");
             for (i = 0; i < query.length; i++) {
-                query[i].includes("stage") ? query[i] = "stage=" + stage.toLowerCase();
+                query[i].includes("stage") ? query[i] = "stage=" + stage.toLowerCase() : nil;
             }
             window.location.replace("/search?"+ query.join("&"));
         
