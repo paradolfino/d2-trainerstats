@@ -7,7 +7,7 @@
             <th>Member Name</th>
             <th>Company Name</th>
             <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
-            <th><%= select_tag "sort", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One", "Demonstration"]), :onchange => "sort('stage')", prompt: "Stage", data: {url: @url, sorted: @sorted} %></th>
+            <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One", "Demonstration"]), :onchange => "stage()", prompt: "Stage", data: {url: @url} %></th>
             <th>Status</th>
             <th>Options</th>
         </tr>
@@ -37,7 +37,7 @@
     
     function sort(type) {
         var stage = $("#stage").find(":selected").text();
-        var url = $("#sort").data('url');
+        var url = $("#stage").data('url');
         window.location.replace("/search?"+ url + "&stage=" + stage +);
     }
 </script>
