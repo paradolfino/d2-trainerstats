@@ -43,7 +43,9 @@
                 
             } else {
                 var query = url.split("&");
-                alert(query);
+                for (i = 0; i < query.length; i++) {
+                    alert(query[i]);
+                }
             }
         } else {
             window.location.replace("/search?"+ url + "&stage=" + stage.toLowerCase());
