@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
     helper_method :trunk
     
     def search_compare(value, string)
+        if value == "status"
+           
+        
+        else
+            
+            
+        end
         if value.downcase.include? string.downcase
            return true
         end
