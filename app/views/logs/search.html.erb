@@ -43,7 +43,7 @@
             for (i = 0; i < query.length; i++) {
                 query[i].includes("stage") ? query[i] = "stage=" + stage.toLowerCase();
             }
-            window.location.replace("/search?"+ query.join("&");
+            window.location.replace("/search?"+ query.join("&"));
         
         } else {
             window.location.replace("/search?"+ url + "&stage=" + stage.toLowerCase());
