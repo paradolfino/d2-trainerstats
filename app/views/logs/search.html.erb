@@ -7,7 +7,7 @@
             <th>Member Name</th>
             <th>Company Name</th>
             <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
-            <th>Type/Stage</th>
+            <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One", "Demonstration"]), :onchange => "stage()", prompt: "Stage", data: {url: @url} %></th>
             <th>Status</th>
             <th>Options</th>
         </tr>
@@ -31,7 +31,23 @@
 
 <script>
     function filter() {
-        val = $("#filter").find(":selected").text();
+        var val = $("#filter").find(":selected").text();
         window.location.replace("/search?query=trainer&string=" + val.toLowerCase());
+    }
+    
+    function stage() {
+        var stage = $("#stage").find(":selected").text();
+        var url = $("#stage").data('url');
+        if (url.includes("stage")) {
+            var query = url.split("&");
+            for (i = 0; i < query.length; i++) {
+                query[i].includes("stage") ? query[i] = "stage=" + stage.toLowerCase() : null;
+            }
+            window.location.replace("/search?"+ query.join("&"));
+        
+        } else {
+            window.location.replace("/search?"+ url + "&stage=" + stage.toLowerCase());
+        }
+        
     }
 </script>

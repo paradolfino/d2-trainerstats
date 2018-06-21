@@ -10,6 +10,8 @@ class LogsController < ApplicationController
         @users = User.all
         @query = params[:query]
         @string = params[:string]
+        @stage = params[:stage]
+        @url = request.fullpath.to_s.split("?")[1]
         @results = 0
         
         @logs.each do |log|
@@ -23,7 +25,12 @@ class LogsController < ApplicationController
                         @training_attrs[name] = value
                     end
                 end
-                @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+                if @stage
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage)
+                else
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+                end
+                puts @url
             end
             
         end
