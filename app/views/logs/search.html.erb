@@ -36,8 +36,8 @@
     }
     
     function sort(type) {
-        var sort = $("#sort").find(":selected").text();
+        var stage = $("#stage").find(":selected").text();
         var url = $("#sort").data('url');
-        window.location.replace("/search?"+ url + "&type=stage&sort=" + sort);
+        window.location.replace("/search?"+ url + "&stage=" + stage +);
     }
 </script>
