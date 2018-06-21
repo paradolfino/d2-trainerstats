@@ -37,6 +37,6 @@
     
     function sort(type) {
         var query = $("#sort").find(":selected").text();
-        alert(query);
+        alert(<%= @url.to_s %>);
     }
 </script>
