@@ -7,7 +7,7 @@
             <th>Member Name</th>
             <th>Company Name</th>
             <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
-            <th><%= select_tag "filter", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One", "Demonstration"]), :onchange => "sort()", prompt: "Stage" %></th>
+            <th><%= select_tag "sort", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One", "Demonstration"]), :onchange => "sort()", prompt: "Stage" %></th>
             <th>Status</th>
             <th>Options</th>
         </tr>
