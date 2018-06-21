@@ -26,11 +26,11 @@ class LogsController < ApplicationController
                     end
                 end
                 if @stage && @status
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status)
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status, true)
                 elsif @stage && !@status
                     @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage)
                 elsif @status && !@stage
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["status"],@status)
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["status"],@status, true)
                 else
                     @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
                 end
