@@ -10,6 +10,8 @@ class LogsController < ApplicationController
         @users = User.all
         @query = params[:query]
         @string = params[:string]
+        @type = params[:type]
+        @sort = params[:sort]
         @results = 0
         
         @logs.each do |log|
