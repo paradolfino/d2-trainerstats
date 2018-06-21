@@ -12,7 +12,7 @@ class LogsController < ApplicationController
         @string = params[:string]
         @type = params[:type]
         @sort = params[:sort]
-        @url = request.current_url
+        @url = request.original_url
         @results = 0
         
         @logs.each do |log|
