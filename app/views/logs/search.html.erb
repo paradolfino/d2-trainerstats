@@ -39,7 +39,12 @@
         var stage = $("#stage").find(":selected").text();
         var url = $("#stage").data('url');
         if (url.includes("stage")) {
-            alert("already contains stage");
+            if (url.includes("status")) {
+                
+            } else {
+                var query = url.split("&");
+                alert(query);
+            }
         } else {
             window.location.replace("/search?"+ url + "&stage=" + stage.toLowerCase());
         }
