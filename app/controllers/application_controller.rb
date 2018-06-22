@@ -7,13 +7,27 @@ class ApplicationController < ActionController::Base
     helper_method :trunk
     
     def search_compare(value, string, strict=false)
-        if strict === false
-            value.downcase.include? string.downcase ? true : false
+        if !strict
+            if value.downcase.include? string.downcase
+                return true
+            end
         else
-            value.downcase === string.downcase ? true : false
+            if value.downcase == string.downcase
+               return true 
+            end
+           
         end
         
     end
+=begin
+    def search_compare_arr(array, strict=false, object)
+        puts "test #{object[array[0]]}" if array[0] != ""
+        
+        #if object[value].downcase.include? string.downcase
+        #       return true 
+        #end
+    end
+=end
     
     def not_found
         redirect_to '/public/404.html'
