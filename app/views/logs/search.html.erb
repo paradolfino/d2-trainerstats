@@ -35,7 +35,7 @@
         var string = $("#" + type).find(":selected").text();
         var url = $("#" + type).data('url');
         if (url.includes("query=" + type)){
-            url = "query=" + type + "&string=" + string;
+            url = "query=" + type + "&string=" + string.toLowerCase();
         }
         if (url.includes(type + "=")) {
             var query = url.split("&");
