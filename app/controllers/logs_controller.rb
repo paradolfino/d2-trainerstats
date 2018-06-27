@@ -8,19 +8,13 @@ class LogsController < ApplicationController
         @trainings = {}
         @logs = Log.all
         @users = User.all
-        #@query = ["query", params[:query]]
-        #@string = ["string", params[:string]]
-        #@stage= ["stage", params[:string]]
         @query = params[:query]
         @string = params[:string]
         @stage = params[:stage]
         @status = params[:status]
         @trainer = params[:trainer]
-        #@filters = [["query", params[:query]], ["string", params[:string]], ["stage", params[:string], @status]]
-        #@params = []
         @url = request.fullpath.to_s.split("?")[1]
         @results = 0
-        #@comparisons = []
         @logs.each do |log|
             
             log.trainings.each do |t|
@@ -29,30 +23,12 @@ class LogsController < ApplicationController
                     if name == "created_at"
                         @training_attrs[name] = value.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M")
                     else
-                        @training_attrs[name] = value
+                        @training_attrs[name] = value.to_s
                     end
                 end
-=begin ###come back to this later
-                @filters.each do |f|
-                   if f[1] then @params << [f[0],f[1]] end
-                end
-                
-                @params.each do |param|
-                    puts param
-                    if search_compare_arr(param, false, @training_attrs)
-                        @comparisons << true
-                        
-                        
-                    else
-                        @comparisons << false
-                    end
-                        
-                end
-                
-                
-                @trainings[t.id] = {:info => @training_attrs} if @comparisons.all? {|x| x == true}
-                
-=end
+                @trainings[t.id] = {:info => @training_attrs} if multi_param_compare(params.stringify_keys, @training_attrs)
+               
+=begin
                 ########## THIS IS AD HOC LOGIC. I am going to refactor.
                 if @stage && @status && @trainer
                     @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status, true) && search_compare(@training_attrs["trainer"],@trainer)
@@ -71,6 +47,7 @@ class LogsController < ApplicationController
                 else
                     @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
                 end
+=end
                 ########## THIS IS AD HOC LOGIC. I am going to refactor.
                 
             end

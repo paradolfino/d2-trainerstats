@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     helper_method :search_compare
     helper_method :trunk
     
+=begin
     def search_compare(value, string, strict=false)
         if !strict
             if value.downcase.include? string.downcase
@@ -19,15 +20,20 @@ class ApplicationController < ActionController::Base
         end
         
     end
-=begin
-    def search_compare_arr(array, strict=false, object)
-        puts "test #{object[array[0]]}" if array[0] != ""
-        
-        #if object[value].downcase.include? string.downcase
-        #       return true 
-        #end
-    end
 =end
+    def multi_param_compare(params, data)
+      strict_key="status" #change this if need be
+      comparisons = []
+      params.each do |key, val|
+          strict_key != nil && key == strict_key ?
+            data.has_key?(key) && data[key].downcase == val.downcase ?
+            comparisons << true : comparisons << false :
+            data.has_key?(key) ? data[key].downcase.include?(val.downcase) ? 
+            comparisons << true : comparisons << false : nil
+          
+      end
+      comparisons.all? ? true : false
+    end
     
     def not_found
         redirect_to '/public/404.html'
