@@ -8,11 +8,6 @@ class LogsController < ApplicationController
         @trainings = {}
         @logs = Log.all
         @users = User.all
-        @query = params[:query]
-        @string = params[:string]
-        @stage = params[:stage]
-        @status = params[:status]
-        @trainer = params[:trainer]
         @url = request.fullpath.to_s.split("?")[1]
         @results = 0
         @logs.each do |log|
@@ -26,7 +21,11 @@ class LogsController < ApplicationController
                         @training_attrs[name] = value.to_s
                     end
                 end
-                @trainings[t.id] = {:info => @training_attrs} if multi_param_compare(params.stringify_keys, @training_attrs)
+                if params[:status] || params[:stage]  || params[:trainer]
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[params[:query]],params[:string]) && multi_param_compare(params.stringify_keys, @training_attrs)
+                else
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[params[:query]],params[:string])
+                end
                
 =begin
                 ########## THIS IS AD HOC LOGIC. I am going to refactor.
